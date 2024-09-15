@@ -136,6 +136,11 @@ previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer
   
 }
 
+- (void)captureOutput:(AVCapturePhotoOutput *)output willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings
+API_AVAILABLE(ios(10.0)){
+    AudioServicesDisposeSystemSoundID(1108);
+}
+
 - (UIImage *)imageByCroppingImage:(UIImage *)image toSize:(CGSize)size {
   double newCropWidth, newCropHeight;
 
